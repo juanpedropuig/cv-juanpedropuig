@@ -1,0 +1,397 @@
+html {
+  height: 100%;
+
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* App */
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 110px repeat(3, 1fr);
+  grid-template-rows: repeat(2,48.4vh) 2vh;
+  grid-template-areas: 
+  "nav main main main"
+  "nav main main main"
+  "footer footer footer footer";
+}
+
+.theme-light {
+  background-color: whitesmoke;
+  color: #080634;
+}
+
+.theme-dark {
+  background-color: #040226;
+  color: whitesmoke;
+}
+
+
+/* Side bar */
+.sidebar {
+  grid-area: nav;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 110px;
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.toggleContainer {
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.themeContainer {
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+  margin-top: 1vh;
+}
+
+#toggle {
+  display: none;
+}
+.theme-button {
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.theme-button::after {
+  content: url('./Images/sun-line.svg');
+  color: black;
+  width: 30px;
+  height: 30px;
+  background-color: gold;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 5 px rgba(0, 0, 0, .25);
+  position: absolute;
+  top: -5px;
+  left: 0;
+  display: grid;
+  place-content: center;
+  line-height: 0;
+  transition: background-color 0.8s,
+  transform 0.8s ease-in;
+}
+#toggle:checked + .theme-button::after {
+  content: url('./Images/moon-line.svg');
+  color: whitesmoke;
+  background-color: #040226;
+  transform: translateX(30px) rotate(360deg);
+}
+
+.languageContainer {
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.lang-button {
+  border-radius: 30px;
+  background-color: inherit;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.lang-button-light {
+  border: #080634 solid 2px;
+  color: #080634;
+}
+.lang-button-dark {
+  border: whitesmoke solid 2px;
+  color: whitesmoke;
+}
+
+.sidebarContainer {
+  grid-row: 3 / 7;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.menuContainer {
+  border-radius: 15px;
+  min-width: 80px;
+  min-height: 60px;
+  justify-self: center;
+  align-self: center;
+}
+
+.theme-light .menuContainer:hover {
+  background-color: rgba(0, 0, 0, .08);
+}
+.theme-dark .menuContainer:hover {
+  background-color: rgba(255, 255, 255, .08);
+}
+
+.theme-light .sidebar .active {
+  background-color: rgba(0, 0, 0, .2);
+}
+.theme-dark .sidebar .active {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+#home {
+  grid-row: 1;
+}
+#studies {
+  grid-row: 2;
+}
+#jobs {
+  grid-row: 3;
+}
+#skills {
+  grid-row: 4;
+}
+
+.menuIcon {
+  min-height: inherit;
+}
+
+.menu {
+  min-height: inherit;
+  margin-top: .2rem;
+}
+
+/* Sites */
+main {
+  grid-area: main;
+}
+
+/* Home */
+.home {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  text-align: left;
+}
+
+.intro {
+  grid-area: 5 / 2 / 7 / 8;
+}
+
+.intro h1 {
+  font-size: 64px;
+  margin: 0;
+}
+.intro h3 {
+  font-size: 25px;
+  margin: 0;
+}
+.intro h4 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.home img {
+  grid-area: 2 / 8 / 8 / 12;
+  height: 100%;
+  border-radius: 1150px;
+}
+
+.contact {
+  grid-area: 9 / 9 / 11 / 12; 
+}
+
+.contact p {
+  margin: 0px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Academic Background, Work Experience, Skill set biolerplate*/
+.curricular {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+
+.curricular h2 {
+  font-size: 48px;
+  grid-area: 1 / 4 / 3 / 10;
+}
+
+.activities {
+  grid-area: 3 / 1 / 13 / 13;
+}
+
+.activity {
+  /* background-color: rgba(0, 0, 0, .08); */
+  border-radius: 15px;
+}
+
+.theme-light .activity {
+  background-color: rgba(0, 0, 0, .08);
+}
+
+.theme-dark .activity {
+  background-color: rgba(255, 255, 255, .08);
+}
+
+.activity ul {
+  text-align: left;
+  margin-right: 1.8vh;
+}
+
+/* Studies */
+ .studies {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+}
+
+.studies h3 {
+  font-size: 28px;
+}
+
+.studies h5 {
+  font-size: 16px;
+}
+
+#study0 {
+  grid-area: 2 / 2 / 5 / 6;
+}
+#study1 {
+  grid-area: 2 / 7 / 5 / 11;
+}
+#study2 {
+  grid-area: 6 / 2 / 9 / 6;
+}
+#study3 {
+  grid-area: 6 / 7 / 9 / 11;
+}
+
+/* Jobs */
+.jobs {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+}
+
+#job0 {
+  grid-area: 2 / 2 / 6 / 7;
+}
+#job1 {
+  grid-area: 2 / 8 / 6 / 13;
+}
+#job2 {
+  grid-area: 7 / 2 / 11 / 7;
+}
+#job3 {
+  grid-area: 7 / 8 / 11 / 13;
+}
+
+.jobs h3 {
+  font-size: 24px;
+  margin: 14px 0;
+}
+
+.jobs h5 {
+  margin: 0px;
+  font-size: 14px;
+}
+
+.jobs li {
+  font-size: 14px;
+}
+
+/* Skill set */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  gap: 2vh 2vh;
+}
+
+.skills h3 {
+  font-size: 30px;
+}
+
+#softskills {
+  grid-area: 2 / 2 / 11 / 7;
+}
+#technologies {
+  grid-area: 2 / 7 / 11 / 12;
+}
+#languages {
+  grid-area: 2 / 12 / 6 / 16;
+}
+#certifications {
+  grid-area: 6 / 12 / 11 / 16;
+}
+
+.skill {
+  margin-bottom: 2.2rem;
+}
+
+.technology {
+  display: flex;
+  align-items: center;
+}
+
+.technology p {
+  margin: 5px 0;
+}
+
+.techIcon {
+  margin: 0 .6vh;
+}
+
+#l1 {
+  font-size: 12px;
+  list-style: none;
+  margin-bottom: 2vh;
+}
+
+.certification {
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.certLogo {
+  height: 18px;
+  margin-right: .7vh;
+}
+
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background-color: #080634;
+  color: silver;
+  min-height: 25px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  font-size: 60%;
+  margin: 0 .4vh;
+}
+
+#announcement {
+  font-size: 43%;
+}
