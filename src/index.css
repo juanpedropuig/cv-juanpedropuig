@@ -107,7 +107,7 @@ code {
 .lang-button {
   border-radius: 30px;
   background-color: inherit;
-  font-family: inherit;
+  font-family: 'Poppins', sans-serif;;
   width: 70px;
   height: 30px;
   cursor: pointer;
