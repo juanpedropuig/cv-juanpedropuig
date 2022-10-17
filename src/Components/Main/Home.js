@@ -26,7 +26,11 @@ export const Home = () => {
           <p><b>Email:</b> jppuigpesce@gmail.com</p>
           <p><b>{english ? 'Cellphone number' : 'Celular'}:</b> (+598) 098600681</p>
           <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/juan-pedro-puig/" target="_blank" rel='noreferrer'>linkedin.com/in/juan-pedro-puig</a>
-          <p><b>Github:</b> el link</p>
+          <br />
+          <b>Github:</b> <a href="https://github.com/juanpedropuig?tab=repositories" target="_blank" rel='noreferrer'>github.com/juanpedropuig</a>
+          <br />
+          <br />
+          <a href={english ? '../../CV/juanpedropuigCV.pdf' : '../../CV/juanpedropuigResume.pdf'} download><b>{english ? 'Download resume' : 'Descargar CV'}</b></a>
         </section>
       </main>
       <Footer />
