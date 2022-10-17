@@ -30,7 +30,7 @@ export const Home = () => {
           <b>Github:</b> <a href="https://github.com/juanpedropuig?tab=repositories" target="=_blank" rel='noreferrer'>github.com/juanpedropuig</a>
           <br />
           <br />
-          <a href={english ? '../../CV/juanpedropuigResume.pdf' : '../../CV/juanpedropuigCV.pdf'} download><b>{english ? 'Download resume' : 'Descargar CV'}</b></a>
+          <a href={english ? '../../CV/juanpedropuigResume.pdf' : '../../CV/juanpedropuigCV.pdf'} download><b>{english ? 'Download resume (...soon)' : 'Descargar CV (...próximamente)'}</b></a>
         </section>
       </main>
       <Footer />
